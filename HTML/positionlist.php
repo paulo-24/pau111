@@ -36,7 +36,7 @@
                 <li><a href="attendance.php"><i class="fas fa-check"></i>Attendance</a></li>
             <!--  <li><a href="employeelist.html"><i class="fas fa-users"></i>Employee List</a></li> -->
                 <li><a href="positionlist.php" class="btn-active"><i class="fas fa-user-tie"></i>Position List</a></li>
-                <li><a href="allowancelist.html"><i class="fas fa-credit-card"></i>Allowance List</a></li>
+                <li><a href="schedule.html"><i class="fas fa-credit-card"></i>Schedule</a></li>
                 <li><a href="DailyTimeRecord.html"><i class="fas fa-equals"></i>DTR</a></li>
                 <li><a href="admin_user.php"><i class="fas fa-user"></i>Admin Users</a></li> 
             </ul>

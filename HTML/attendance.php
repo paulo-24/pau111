@@ -29,7 +29,7 @@ include("php/database.php");
             <li><a href="attendance.php" class="btn-active"><i class="fas fa-check"></i>Attendance</a></li>
             <!--  <li><a href="employeelist.html"><i class="fas fa-users"></i>Employee List</a></li> -->
             <li><a href="positionlist.php"><i class="fas fa-user-tie"></i>Position List</a></li>
-            <li><a href="allowancelist.html"><i class="fas fa-credit-card"></i>Allowance List</a></li>
+            <li><a href="schedule.html"><i class="fas fa-credit-card"></i>Schedule</a></li>
             <li><a href="DailyTimeRecord.html"><i class="fas fa-equals"></i>DTR</a></li>
             <li><a href="admin_user.php"><i class="fas fa-user"></i>Admin Users</a></li> 
         </ul>
@@ -41,6 +41,9 @@ include("php/database.php");
             <div class="attendance">
                 <div class="attendance-list">  
                     <table id="attendanceTable" class="table">
+                            <div class="reset-button-container">
+                    <button id="resetAttendance" class="btn-reset">Reset Table</button>
+                </div>
                         <thead>
                             <tr>
                                 
@@ -49,7 +52,10 @@ include("php/database.php");
                                 <th>Time Out</th>
                                 <th>Total Hours</th>
                                 <th>Status</th>
-                                <th>OverTime</th>
+                                <th>OverTime In</th>
+                                <th>OverTime Out</th>
+                                <th>Total Hours</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -59,6 +65,7 @@ include("php/database.php");
                 </div>
             </div>
         </div>
+    </div>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/camera.js"></script> <!-- Include camera.js -->
@@ -104,6 +111,21 @@ include("php/database.php");
 
                     table.append(row);
                 });
+                
+                    
+                // Attach click event to delete buttons
+                $('.btn-delete').on('click', function(e) {
+                    e.preventDefault();
+                    var recordId = $(this).data('id');
+                    deleteAttendanceRecord(recordId);
+                });
+                // Function to reset the attendance table
+                $('#resetAttendance').on('click', function() {
+                    console.log("Resetting Attendance Table...");
+                    $('#attendanceTable tbody').empty();
+                });
+    
+
                 // Attach click event to download links
                 $('.download-link').on('click', function(e) {
                     e.preventDefault();
@@ -153,6 +175,7 @@ include("php/database.php");
 
 
             fetchAttendanceData();
+
         });
     </script>
 </body>

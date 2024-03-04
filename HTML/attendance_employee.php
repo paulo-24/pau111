@@ -6,7 +6,6 @@ if (isset($_POST['action']) && isset($_POST['employeeName']) && isset($_POST['ti
     $action = $_POST['action'];
     $employeeName = $_POST['employeeName'];
     $time = $_POST['time']; 
-    $image = $_POST['image'];
 
     date_default_timezone_set('Asia/Manila');
     $currentDateTime = date('Y-m-d H:i:s');
@@ -26,7 +25,7 @@ if (isset($_POST['action']) && isset($_POST['employeeName']) && isset($_POST['ti
 
         if ($action === 'Time In') {
             $status = 'Time In';
-            $sqlInsert = "INSERT INTO attendance (employee_id, name, time_in, image, status) VALUES ('$employeeId', '$employeeName', '$currentDateTime', '$image', '$status')";
+            $sqlInsert = "INSERT INTO attendance (employee_id, name, time_in, status) VALUES ('$employeeId', '$employeeName', '$currentDateTime', '$status')";
             
             if (mysqli_query($connection, $sqlInsert)) {
                 echo "   TIME - IN ✔️ ";

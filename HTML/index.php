@@ -23,6 +23,7 @@ mysqli_close($connection);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home Page</title>
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/schedule.css">
   <script>
   function captureImage() {
             const canvas = document.createElement('canvas');
@@ -58,10 +59,11 @@ mysqli_close($connection);
     <a class="text"><div class="br-name">BigBrew Baliwasan</div></a>
     <div class="selection">
       <a href="index.php">HOME</a>
-      <a href="index.php">SCHEDULE</a>
+      <a href="Schedule_Index.html">SCHEDULE</a>
       <a href="login_page.php" target="_self">SIGN IN</a>
     </div>
   </header>
+  
   <img src="images/bigbrewpic3.jpg" class="img">
   
   <div class="container">
@@ -165,7 +167,10 @@ mysqli_close($connection);
                 console.error('Error:', error);
                 alert('An error occurred. Please try again.');
             });
+
+          })
+            
         
     </script>
-    </body>
+</body> 
 </html>
